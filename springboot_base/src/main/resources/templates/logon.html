@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <link rel="stylesheet" th:href="@{/webjars/jquery/3.4.1/jquery.js}">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.4.1/css/bootstrap.css}">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-md-4 col-md-offset-4">
+            <form class="form-horizontal" action="/user/logon" method="post">
+                <div class="control-group">
+                    <label class="control-label" for="username" th:text="#{logon.username}">用户名</label>
+                    <div class="controls">
+                        <input id="username" name="username" class="form-control" type="text"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputPassword" th:text="#{logon.password}">密码</label>
+                    <div class="controls">
+                        <input id="inputPassword" name="password" class="form-control" type="password"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <label class="checkbox"><input class="check-menu-item" type="checkbox"
+                                                       th:text="#{logon.remember}"/></label>
+                        <button type="submit" class="btn" th:text="#{logon.login}">登陆</button>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <a th:href="@{/index.html(l='zh_CN')}">中文</a>
+                    <a th:href="@{/index.html(l='en_US')}">English</a>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>

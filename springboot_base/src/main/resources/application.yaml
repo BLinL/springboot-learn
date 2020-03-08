@@ -1,0 +1,25 @@
+#mybatis:
+#  type-aliases-package: com.liu.springboot.pojo #实体类包名
+#  mapper-locations: classpath:mapper/*.xml
+#spring:
+#  datasource: #数据库配置
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/mydb
+#    username: root
+#    password: root123
+#server:
+#  port: 8082
+
+pet:
+  name: xiaohei
+  age: 11
+
+logging:
+  level:
+    com.liu.springboot: debug
+  file: K:\\springboot.log
+spring:
+  messages:
+    basename: i18n.logon
+  thymeleaf:
+    cache: false
