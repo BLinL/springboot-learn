@@ -8,4 +8,4 @@ spring 集成各种框架
 how to run
 
 1. clone and open with IDEA
-2. intall maven and go to project dir open cmd and run mvn spring-boot:run
+2. intall maven and go to project dir open cmd and run`` mvn spring-boot:run``
