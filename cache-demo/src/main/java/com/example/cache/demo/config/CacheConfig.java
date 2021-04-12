@@ -8,6 +8,7 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.caffeine.CaffeineCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,8 +16,8 @@ import java.util.concurrent.TimeUnit;
  * @author bliu
  * @date 2021-03-02 9:15
  */
+@Profile("test")
 @Configuration
-@EnableCaching//开启缓存
 public class CacheConfig {
 
     /*
@@ -24,6 +25,7 @@ public class CacheConfig {
     * 可以使用默认配置
     * */
     @Bean
+
     public CacheManager cacheManager(){
         CaffeineCacheManager cacheManager = new CaffeineCacheManager("USER", "SECOND_CACHE");
         cacheManager.setAllowNullValues(false); //can happen if you get a value from a @Cachable that returns null
