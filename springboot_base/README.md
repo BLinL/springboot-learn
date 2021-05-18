@@ -1,2 +1,2 @@
 # springboot_base
-springboot学习项目
+springboot 基础用法
