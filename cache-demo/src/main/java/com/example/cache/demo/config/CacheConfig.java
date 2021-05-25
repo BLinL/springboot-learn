@@ -3,10 +3,13 @@ package com.example.cache.demo.config;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.benmanes.caffeine.cache.RemovalCause;
 import com.github.benmanes.caffeine.cache.RemovalListener;
+import org.ehcache.config.CacheConfiguration;
+import org.ehcache.core.EhcacheManager;
 import org.springframework.cache.CacheManager;
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.caffeine.CaffeineCacheManager;
+import org.springframework.cache.ehcache.EhCacheCacheManager;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
@@ -24,21 +27,21 @@ public class CacheConfig {
     * CacheManager 配置
     * 可以使用默认配置
     * */
-    @Bean
+//    @Bean
+//    public CacheManager cacheManager(){
+//        CaffeineCacheManager cacheManager = new CaffeineCacheManager("USER", "SECOND_CACHE");
+//        cacheManager.setAllowNullValues(false); //can happen if you get a value from a @Cachable that returns null
+//
+//        Caffeine<Object, Object> caffeine = Caffeine.newBuilder()
+//                .expireAfterWrite(10, TimeUnit.MINUTES)//缓存失效时间
+//                .maximumSize(1000)
+//                .removalListener(new CustomRemovalListener())
+//                .recordStats();
+//
+//        cacheManager.setCaffeine(caffeine);
+//        return cacheManager;
+//    }
 
-    public CacheManager cacheManager(){
-        CaffeineCacheManager cacheManager = new CaffeineCacheManager("USER", "SECOND_CACHE");
-        cacheManager.setAllowNullValues(false); //can happen if you get a value from a @Cachable that returns null
-
-        Caffeine<Object, Object> caffeine = Caffeine.newBuilder()
-                .expireAfterWrite(10, TimeUnit.MINUTES)//缓存失效时间
-                .maximumSize(1000)
-                .removalListener(new CustomRemovalListener())
-                .recordStats();
-
-        cacheManager.setCaffeine(caffeine);
-        return cacheManager;
-    }
 
     class CustomRemovalListener implements RemovalListener<Object, Object> {
         @Override
