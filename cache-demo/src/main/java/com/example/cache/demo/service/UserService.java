@@ -11,13 +11,13 @@ import org.springframework.stereotype.Service;
  * @date 2021-03-02 9:23
  */
 @Service
-@CacheConfig(cacheNames = {"abc"})
+@CacheConfig(cacheNames = {"user"})
 public class UserService {
 
     @Autowired
     UserRepository userRepository;
 
-    @Cacheable(cacheNames = "abc",unless = "#result == null", key = "#username")
+    @Cacheable(unless = "#result == null", key = "#username")
     public User getUserByName(String username) throws InterruptedException {
         System.out.println("get user form db");
         User user = userRepository.getUserByName(username);

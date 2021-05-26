@@ -5,9 +5,10 @@
             http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd
             http://www.ehcache.org/v3/jsr107 http://www.ehcache.org/schema/ehcache-107-ext-3.0.xsd">
 
-    <cache alias="abc">
+    <cache alias="user">
         <key-type>java.lang.String</key-type>
         <value-type>java.lang.Object</value-type>
+        <!-- 缓存过期时间 -->
         <expiry>
             <ttl unit="seconds">30</ttl>
         </expiry>
