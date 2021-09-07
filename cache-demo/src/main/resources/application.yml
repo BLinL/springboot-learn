@@ -7,7 +7,7 @@ spring:
       max-acive: 8
       max-wait: -1
       max-idle: 8
-      min-idle: 0
+      min-idle: 2
     timeout: 0
   cache:
     jcache:
