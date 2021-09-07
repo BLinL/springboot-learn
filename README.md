@@ -4,7 +4,7 @@ spring 集成各种框架
 - [X] cache
 - [X] rabbitmq
 - [X] mongodb
-- [ ] security
+- [X ] security
 
 
 how to run
