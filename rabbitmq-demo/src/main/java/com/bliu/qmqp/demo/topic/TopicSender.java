@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TopicSender {
+
     @Autowired
     private AmqpTemplate rabbitTemplate;
 

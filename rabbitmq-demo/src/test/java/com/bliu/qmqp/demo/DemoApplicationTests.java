@@ -22,7 +22,7 @@ class DemoApplicationTests {
     private TopicSender topicSender;
 
     @Test
-    void contextLoads() {
+    void testDirectExchange() {
        helloSender.send();
 //       fanoutSender.send();
     }
