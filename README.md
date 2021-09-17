@@ -5,6 +5,7 @@ spring 集成各种框架
 - [X] rabbitmq
 - [X] mongodb
 - [X] security
+- [X] websocket
 
 
 how to run
