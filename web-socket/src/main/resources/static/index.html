@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>web socket</title>
+</head>
+<body>
+<h1>init...</h1>
+message: <ul name="ms"></ul>
+<input name="send message" />
+<button>send</button>
+<script>
+    var ws = new WebSocket("ws://localhost:8080/myHandler");
+    var _ms = document.querySelector("ul");
+    var _input = document.querySelector("input");
+    var _btn_send = document.querySelector("button");
+
+    ws.onopen = function (event) {
+        console.log("open!")
+    }
+
+    ws.onmessage = function (event) {
+        console.log("received message " + event.data);
+        _li = document.createElement("li");
+        _li.innerText = event.data;
+        _ms.append(_li);
+    }
+
+    ws.onclose = function (event) {
+        console.log("closed!")
+    }
+
+    _btn_send.addEventListener('click', function () {
+        console.log("send message:" + _input.value)
+        sendMessage(_input.value);
+    });
+
+    function sendMessage(content) {
+        ws.send(content);
+    }
+</script>
+</body>
+</html>
