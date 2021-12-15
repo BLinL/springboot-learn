@@ -3,10 +3,13 @@ package com.liu.springboot.task;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.springframework.boot.autoconfigure.batch.BatchProperties;
+import org.springframework.scheduling.quartz.QuartzJobBean;
 
-public class MyJob implements Job {
+public class MyJob extends QuartzJobBean {
+
     @Override
-    public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+    protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
         System.out.println("execute this job");
     }
 }
