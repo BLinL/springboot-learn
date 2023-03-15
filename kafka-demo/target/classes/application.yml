@@ -1,0 +1,10 @@
+spring:
+  kafka:
+    bootstrap-servers: 124.221.94.153:9092,124.221.94.153:9093,124.221.94.153:9094
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: test
+        output:
+          destination: test
