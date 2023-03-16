@@ -13,5 +13,6 @@ spring 集成各种框架
 - [X] deploy war in tomcat
 
 
-1. clone and open with IDEA
-2. intall maven and go to project dir open cmd and run`` mvn spring-boot:run``
+1. clone [https://github.com/BLinL/springboot-learn](https://github.com/BLinL/springboot-learn)
+2. with IDEA run App.java
+3. use maven and run`` mvn spring-boot:run``
